@@ -1,0 +1,124 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:2:1-23:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\82682853f6b43f447ce41d1aa20602b1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\6bc50883231e77e438ca0aaa936f541a\AndroidManifest.xml:2:1-11:12
+MERGED from [com.mbientlab:metawear:3.4.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\metawear-3.4.0.aar\5167063730798a4071a92d91b7fa9185\AndroidManifest.xml:25:1-41:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\278e92596e51acb9e2bfb712afbe2583\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\dbef24f96634a04c35fa69e997998a9d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\f6496112184f92c8b1fdf139b6ebeb71\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\3680e7699d41ce4e13e211eed4b8bd66\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\66278d476afe48c027d30b17d8b5bb11\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\0820fc31a73a5378d2f24509d4a4669f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\8f9a217ac3fcd7eebe997e15ff68ace9\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\356836abb3d47130e6c7d93c967c9987\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9b97939750f7b77979e00e9c98c43597\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0917c084122718013457e4c4fa69a48b\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:3:5-41
+		INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:2:1-23:12
+		INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:2:1-23:12
+		INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:5:5-21:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\6bc50883231e77e438ca0aaa936f541a\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\6bc50883231e77e438ca0aaa936f541a\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:11:9-40
+service#com.mbientlab.metawear.android.BtleService
+ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:13:9-78
+	android:name
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:13:18-75
+activity#mjk5772.psu.edu.abdisctest.MainActivity
+ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:14:9-20:20
+	android:name
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:14:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml:18:27-74
+uses-sdk
+INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\82682853f6b43f447ce41d1aa20602b1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\82682853f6b43f447ce41d1aa20602b1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\6bc50883231e77e438ca0aaa936f541a\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\6bc50883231e77e438ca0aaa936f541a\AndroidManifest.xml:5:5-7:41
+MERGED from [com.mbientlab:metawear:3.4.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\metawear-3.4.0.aar\5167063730798a4071a92d91b7fa9185\AndroidManifest.xml:30:5-32:41
+MERGED from [com.mbientlab:metawear:3.4.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\metawear-3.4.0.aar\5167063730798a4071a92d91b7fa9185\AndroidManifest.xml:30:5-32:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\278e92596e51acb9e2bfb712afbe2583\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\278e92596e51acb9e2bfb712afbe2583\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\dbef24f96634a04c35fa69e997998a9d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\dbef24f96634a04c35fa69e997998a9d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\f6496112184f92c8b1fdf139b6ebeb71\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\f6496112184f92c8b1fdf139b6ebeb71\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\3680e7699d41ce4e13e211eed4b8bd66\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\3680e7699d41ce4e13e211eed4b8bd66\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\66278d476afe48c027d30b17d8b5bb11\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\66278d476afe48c027d30b17d8b5bb11\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\0820fc31a73a5378d2f24509d4a4669f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\0820fc31a73a5378d2f24509d4a4669f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\8f9a217ac3fcd7eebe997e15ff68ace9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\8f9a217ac3fcd7eebe997e15ff68ace9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\356836abb3d47130e6c7d93c967c9987\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\356836abb3d47130e6c7d93c967c9987\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9b97939750f7b77979e00e9c98c43597\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9b97939750f7b77979e00e9c98c43597\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0917c084122718013457e4c4fa69a48b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0917c084122718013457e4c4fa69a48b\AndroidManifest.xml:20:5-44
+INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+		ADDED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Data\School Work\cmpen482\AbDiscTest\app\src\main\AndroidManifest.xml
+uses-feature#android.hardware.bluetooth_le
+ADDED from [com.mbientlab:metawear:3.4.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\metawear-3.4.0.aar\5167063730798a4071a92d91b7fa9185\AndroidManifest.xml:34:5-36:35
+	android:required
+		ADDED from [com.mbientlab:metawear:3.4.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\metawear-3.4.0.aar\5167063730798a4071a92d91b7fa9185\AndroidManifest.xml:36:9-32
+	android:name
+		ADDED from [com.mbientlab:metawear:3.4.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\metawear-3.4.0.aar\5167063730798a4071a92d91b7fa9185\AndroidManifest.xml:35:9-53
+uses-permission#android.permission.BLUETOOTH
+ADDED from [com.mbientlab:metawear:3.4.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\metawear-3.4.0.aar\5167063730798a4071a92d91b7fa9185\AndroidManifest.xml:38:5-68
+	android:name
+		ADDED from [com.mbientlab:metawear:3.4.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\metawear-3.4.0.aar\5167063730798a4071a92d91b7fa9185\AndroidManifest.xml:38:22-65
+uses-permission#android.permission.INTERNET
+ADDED from [com.mbientlab:metawear:3.4.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\metawear-3.4.0.aar\5167063730798a4071a92d91b7fa9185\AndroidManifest.xml:39:5-67
+	android:name
+		ADDED from [com.mbientlab:metawear:3.4.0] C:\Users\matth\.gradle\caches\transforms-1\files-1.1\metawear-3.4.0.aar\5167063730798a4071a92d91b7fa9185\AndroidManifest.xml:39:22-64
