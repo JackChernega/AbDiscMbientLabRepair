@@ -11,6 +11,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity
     private Sensor sensor;
     private boolean isSensorPresent = false;
     private StepsFragment stepsFragment;
+    private EditText editTextStepsGoal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +90,14 @@ public class MainActivity extends AppCompatActivity
             editor.commit();
         }
         stepsFragment.updateStepsFragment();
+    }
+
+    public void setStepsGoal(View view) {
+        editTextStepsGoal = (EditText) findViewById(R.id.steps_goal_edit_text);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        int newStepGoal = Integer.parseInt(editTextStepsGoal.getText().toString());
+        editor.putInt(getString(R.string.saved_steps_goal), newStepGoal);
+        editor.commit();
     }
 
     @Override

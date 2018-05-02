@@ -15,29 +15,54 @@ public class StepsFragment extends Fragment {
     @Nullable
     TextView dateView;
     TextView stepsView;
+    TextView currentGoalView;
+    TextView stepsGoalPercentageCompletedView;
     SharedPreferences sharedPreferences;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_steps,null);
         dateView = (TextView) rootView.findViewById(R.id.date_steps_text_view);
         stepsView = (TextView) rootView.findViewById(R.id.step_count_text_view);
+        currentGoalView = (TextView) rootView.findViewById(R.id.step_goal_text_view);
+        stepsGoalPercentageCompletedView = (TextView) rootView.findViewById(R.id.step_goal_percentage_completed_text_view);
+
 
         sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-        String currentDate = sharedPreferences.getString(getString(R.string.saved_current_date),"Error Retrieving Date.");
-        String stepsToday = String.valueOf(sharedPreferences.getInt(getString(R.string.saved_steps_today),0));
 
-        dateView.setText(currentDate);
-        stepsView.setText(stepsToday);
+        String currentDateString = sharedPreferences.getString(getString(R.string.saved_current_date),"Error Retrieving Date.");
+        int stepsToday = sharedPreferences.getInt(getString(R.string.saved_steps_today),0);
+        String stepsTodayString = String.valueOf(stepsToday);
+        int stepsGoalInteger = sharedPreferences.getInt(getString(R.string.saved_steps_goal),1000);
+        String stepsGoalString = String.valueOf(stepsGoalInteger);
+
+        double stepsCompletedPercentage = (stepsToday* 100.0)/stepsGoalInteger ;
+
+        dateView.setText(currentDateString);
+        stepsView.setText(stepsTodayString);
+        currentGoalView.setText(stepsGoalString);
+        String stepsCompletedPercentageString = String.format("%.2f",stepsCompletedPercentage) + "%";
+        stepsGoalPercentageCompletedView.setText(stepsCompletedPercentageString);
 
         return rootView;
     }
 
     public void updateStepsFragment() {
-        sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+        if(isVisible()){
 
-        String currentDate = sharedPreferences.getString(getString(R.string.saved_current_date),"ERROR");
-        String stepsToday = String.valueOf(sharedPreferences.getInt(getString(R.string.saved_steps_today),0));
+            sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
 
-        dateView.setText(currentDate);
-        stepsView.setText(stepsToday);
+            String currentDateString = sharedPreferences.getString(getString(R.string.saved_current_date),"Error Retrieving Date.");
+            int stepsToday = sharedPreferences.getInt(getString(R.string.saved_steps_today),0);
+            String stepsTodayString = String.valueOf(stepsToday);
+            int stepsGoalInteger = sharedPreferences.getInt(getString(R.string.saved_steps_goal),1000);
+            String stepsGoalString = String.valueOf(stepsGoalInteger);
+
+            double stepsCompletedPercentage = (stepsToday* 100.0)/stepsGoalInteger ;
+
+            dateView.setText(currentDateString);
+            stepsView.setText(stepsTodayString);
+            currentGoalView.setText(stepsGoalString);
+            String stepsCompletedPercentageString = String.format("%.2f",stepsCompletedPercentage) + "%";
+            stepsGoalPercentageCompletedView.setText(stepsCompletedPercentageString);
+        }
     }
 }
