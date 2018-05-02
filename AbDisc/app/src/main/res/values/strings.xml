@@ -3,4 +3,5 @@
     <string name="title_steps">Steps</string>
     <string name="title_goals">My Goals</string>
     <string name="saved_current_date">SAVED_CURRENT_DATE</string>
+    <string name="saved_steps_today">SAVED_STEPS_TODAY</string>
 </resources>

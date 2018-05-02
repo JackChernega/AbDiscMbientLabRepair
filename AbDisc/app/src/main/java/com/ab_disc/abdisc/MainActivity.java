@@ -1,22 +1,28 @@
 package com.ab_disc.abdisc;
 
 import android.content.SharedPreferences;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.prefs.Preferences;
 
 public class MainActivity extends AppCompatActivity
-        implements BottomNavigationView.OnNavigationItemSelectedListener {
+        implements BottomNavigationView.OnNavigationItemSelectedListener, SensorEventListener{
+
+    private SensorManager sensorManager;
+    private SharedPreferences sharedPreferences;
+    private Sensor sensor;
+    private boolean isSensorPresent = false;
+    private StepsFragment stepsFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +32,66 @@ public class MainActivity extends AppCompatActivity
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
-        String currentDateString = DateFormat.getDateInstance().format(new Date());
-        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(getString(R.string.saved_current_date), currentDateString);
-        editor.commit();
+        stepsFragment = new StepsFragment();
 
-        loadFragment(new StepsFragment());
+        sensorManager = (SensorManager) this.getSystemService(SENSOR_SERVICE);
+        if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null) {
+            sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+            isSensorPresent = true;
+        } else {
+            isSensorPresent = false;
+        }
+
+        String currentDateString = DateFormat.getDateInstance().format(new Date());
+        sharedPreferences = getPreferences(MODE_PRIVATE);
+        String dateSaved = sharedPreferences.getString(getString(R.string.saved_current_date),"ERROR");
+        if (!currentDateString.equals(dateSaved)) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt(getString(R.string.saved_steps_today), 0);
+            editor.putString(getString(R.string.saved_current_date), currentDateString);
+            editor.commit();
+        }
+
+        loadFragment(stepsFragment);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(isSensorPresent) {
+            sensorManager.registerListener(this, sensor, sensorManager.SENSOR_DELAY_UI);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(isSensorPresent) {
+            sensorManager.unregisterListener(this);
+        }
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        String currentDateString = DateFormat.getDateInstance().format(new Date());
+        String dateSaved = sharedPreferences.getString(getString(R.string.saved_current_date),"ERROR");
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        if (!currentDateString.equals(dateSaved)) {
+            editor.putInt(getString(R.string.saved_steps_today), 0);
+            editor.putString(getString(R.string.saved_current_date), currentDateString);
+            editor.commit();
+        } else {
+            int stepTodaySaved = sharedPreferences.getInt(getString(R.string.saved_steps_today),0);
+            int stepsToday = stepTodaySaved + 1;
+            editor.putInt(getString(R.string.saved_steps_today), stepsToday);
+            editor.commit();
+        }
+        stepsFragment.updateStepsFragment();
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
     }
 
     private boolean loadFragment(Fragment fragment) {
