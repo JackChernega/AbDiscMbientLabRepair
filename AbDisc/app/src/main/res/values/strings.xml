@@ -2,4 +2,5 @@
     <string name="app_name">AbDisc</string>
     <string name="title_steps">Steps</string>
     <string name="title_goals">My Goals</string>
+    <string name="saved_current_date">SAVED_CURRENT_DATE</string>
 </resources>
