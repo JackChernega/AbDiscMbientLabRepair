@@ -18,7 +18,7 @@ import java.text.DateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity
-        implements BottomNavigationView.OnNavigationItemSelectedListener, SensorEventListener{
+        implements BottomNavigationView.OnNavigationItemSelectedListener, SensorEventListener {
 
     private SensorManager sensorManager;
     private SharedPreferences sharedPreferences;
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity
     private boolean isSensorPresent = false;
     private StepsFragment stepsFragment;
     private EditText editTextStepsGoal;
+    private EditText editTextCrunchesGoal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         stepsFragment = new StepsFragment();
 
         sensorManager = (SensorManager) this.getSystemService(SENSOR_SERVICE);
-        if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null) {
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null) {
             sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
             isSensorPresent = true;
         } else {
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity
 
         String currentDateString = DateFormat.getDateInstance().format(new Date());
         sharedPreferences = getPreferences(MODE_PRIVATE);
-        String dateSaved = sharedPreferences.getString(getString(R.string.saved_current_date),"ERROR");
+        String dateSaved = sharedPreferences.getString(getString(R.string.saved_current_date), "ERROR");
         if (!currentDateString.equals(dateSaved)) {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt(getString(R.string.saved_steps_today), 0);
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        if(isSensorPresent) {
+        if (isSensorPresent) {
             sensorManager.registerListener(this, sensor, sensorManager.SENSOR_DELAY_UI);
         }
     }
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onPause() {
         super.onPause();
-        if(isSensorPresent) {
+        if (isSensorPresent) {
             sensorManager.unregisterListener(this);
         }
     }
@@ -77,14 +78,14 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onSensorChanged(SensorEvent event) {
         String currentDateString = DateFormat.getDateInstance().format(new Date());
-        String dateSaved = sharedPreferences.getString(getString(R.string.saved_current_date),"ERROR");
+        String dateSaved = sharedPreferences.getString(getString(R.string.saved_current_date), "ERROR");
         SharedPreferences.Editor editor = sharedPreferences.edit();
         if (!currentDateString.equals(dateSaved)) {
             editor.putInt(getString(R.string.saved_steps_today), 0);
             editor.putString(getString(R.string.saved_current_date), currentDateString);
             editor.commit();
         } else {
-            int stepTodaySaved = sharedPreferences.getInt(getString(R.string.saved_steps_today),0);
+            int stepTodaySaved = sharedPreferences.getInt(getString(R.string.saved_steps_today), 0);
             int stepsToday = stepTodaySaved + 1;
             editor.putInt(getString(R.string.saved_steps_today), stepsToday);
             editor.commit();
@@ -100,13 +101,21 @@ public class MainActivity extends AppCompatActivity
         editor.commit();
     }
 
+    public void setCrunchesGoal(View view) {
+        editTextStepsGoal = (EditText) findViewById(R.id.crunches_goal_edit_text);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        int newCrunchesGoal = Integer.parseInt(editTextStepsGoal.getText().toString());
+        editor.putInt(getString(R.string.saved_crunches_goal), newCrunchesGoal);
+        editor.commit();
+    }
+
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
 
     private boolean loadFragment(Fragment fragment) {
-        if(fragment != null) {
+        if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, fragment)
@@ -127,6 +136,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.navigation_goals:
                 fragment = new GoalsFragment();
+                break;
+            case R.id.navigation_crunches:
+                fragment = new CrunchesFragment();
                 break;
         }
 

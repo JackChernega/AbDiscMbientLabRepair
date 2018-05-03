@@ -22,7 +22,7 @@
             <com.hookedonplay.decoviewlib.DecoView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/dynamicArcView"
+                android:id="@+id/steps_arc_view"
                 android:padding="32dp"/>
 
             <LinearLayout

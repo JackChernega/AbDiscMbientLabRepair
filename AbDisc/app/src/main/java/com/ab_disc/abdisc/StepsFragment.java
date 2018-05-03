@@ -2,6 +2,7 @@ package com.ab_disc.abdisc;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.hookedonplay.decoviewlib.DecoView;
+import com.hookedonplay.decoviewlib.charts.SeriesItem;
+import com.hookedonplay.decoviewlib.events.DecoEvent;
+
 public class StepsFragment extends Fragment {
     @Nullable
     TextView dateView;
@@ -18,13 +23,16 @@ public class StepsFragment extends Fragment {
     TextView currentGoalView;
     TextView stepsGoalPercentageCompletedView;
     SharedPreferences sharedPreferences;
+    DecoView arcView;
+    SeriesItem seriesItem;
+    int seriesIndex;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_steps,null);
         dateView = (TextView) rootView.findViewById(R.id.date_steps_text_view);
         stepsView = (TextView) rootView.findViewById(R.id.step_count_text_view);
         currentGoalView = (TextView) rootView.findViewById(R.id.step_goal_text_view);
         stepsGoalPercentageCompletedView = (TextView) rootView.findViewById(R.id.step_goal_percentage_completed_text_view);
-
+        arcView = (DecoView) rootView.findViewById(R.id.steps_arc_view);
 
         sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
 
@@ -41,6 +49,23 @@ public class StepsFragment extends Fragment {
         currentGoalView.setText(stepsGoalString);
         String stepsCompletedPercentageString = String.format("%.2f",stepsCompletedPercentage) + "%";
         stepsGoalPercentageCompletedView.setText(stepsCompletedPercentageString);
+
+        // Create background track
+        arcView.addSeries(new SeriesItem.Builder(Color.argb(255, 218, 218, 218))
+                .setRange(0, 100, 100)
+                .setInitialVisibility(false)
+                .setLineWidth(32f)
+                .build());
+
+        //Create data series track
+        seriesItem = new SeriesItem.Builder(getResources().getColor(R.color.colorPrimary))
+                .setRange(0, 100, 0)
+                .setLineWidth(32f)
+                .build();
+
+        seriesIndex = arcView.addSeries(seriesItem);
+
+        arcView.addEvent(new DecoEvent.Builder((int)stepsCompletedPercentage).setIndex(seriesIndex).setDelay(500).build());
 
         return rootView;
     }
