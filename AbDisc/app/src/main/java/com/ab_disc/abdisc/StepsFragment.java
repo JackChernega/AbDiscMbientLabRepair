@@ -28,12 +28,14 @@ public class StepsFragment extends Fragment {
     int seriesIndex;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_steps,null);
+        // get all the views that are going to be modified
         dateView = (TextView) rootView.findViewById(R.id.date_steps_text_view);
         stepsView = (TextView) rootView.findViewById(R.id.step_count_text_view);
         currentGoalView = (TextView) rootView.findViewById(R.id.step_goal_text_view);
         stepsGoalPercentageCompletedView = (TextView) rootView.findViewById(R.id.step_goal_percentage_completed_text_view);
         arcView = (DecoView) rootView.findViewById(R.id.steps_arc_view);
 
+        // persistent data
         sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
 
         String currentDateString = sharedPreferences.getString(getString(R.string.saved_current_date),"Error Retrieving Date.");
@@ -64,7 +66,6 @@ public class StepsFragment extends Fragment {
                 .build();
 
         seriesIndex = arcView.addSeries(seriesItem);
-
         arcView.addEvent(new DecoEvent.Builder((int)stepsCompletedPercentage).setIndex(seriesIndex).setDelay(500).build());
 
         return rootView;
